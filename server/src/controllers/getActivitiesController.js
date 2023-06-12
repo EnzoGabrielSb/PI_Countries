@@ -1,8 +1,8 @@
 const { Activity } = require("../db");
 
 const getActivitiesController = async () => {
-  const getAllActivities = await Activity.findAll();
-  return getAllActivities;
+  const activities = await Activity.findAll();
+  return activities;
 };
 
 module.exports = getActivitiesController;
