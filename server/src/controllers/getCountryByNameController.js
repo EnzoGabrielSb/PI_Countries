@@ -5,7 +5,7 @@ const getCountryByNameController = async (name) => {
   if (name) {
     const filter = await Country.findAll({
       where: {
-        name: { [Op.like]: `%${name}` },
+        name: { [Op.like]: `%${name}%` },
       },
       include: {
         model: Activity,

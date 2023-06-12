@@ -1,3 +1,4 @@
+/*
 const getCountryByNameController = require("../controllers/getCountryByNameController");
 
 const getCountryByName = async (req, res) => {
@@ -14,3 +15,4 @@ const getCountryByName = async (req, res) => {
 };
 
 module.exports = getCountryByName;
+*/
