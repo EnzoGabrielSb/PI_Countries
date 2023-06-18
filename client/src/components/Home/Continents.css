@@ -1,0 +1,209 @@
+    :root {
+    --aliceblue: #f0f8ff;
+    --north: #38726C;
+    --oceania: #2394b6;
+    --asia: #cd99a1;
+    --europe: #82e4c6;
+    --south: #c6ec5c;
+    --africa: #b08ec1;
+    --bgHover: #0a101d;
+    --radius: 1.25rem;
+    --transition: .8s;
+}
+
+
+/*  Asia */ 
+
+.Asia {
+    background-color: var(--bgHover);
+    border-radius: 0.5rem;
+    padding: 0 1rem;
+}
+
+.asia:hover .Asia {
+    background-color: var(--asia);
+    transition: var(--transition);
+}
+
+
+.asia:hover {
+    box-shadow: 0.1rem 0.1rem 0.3rem 0.3rem var(--asia);
+    width: 21.25rem;
+    border-radius: var(--radius);
+    transition: var(--transition);
+    background-color: var(--bgHover);
+}
+
+
+/* North */
+.North {
+    background-color: var(--bgHover);
+    border-radius: 0.5rem;
+    padding: 0 1rem;
+}
+
+.north:hover .North {
+    background-color: var(--north);
+    transition: var(--transition);
+}
+
+.north:hover {
+    box-shadow: 0.1rem 0.1rem 0.3rem 0.3rem var(--north);
+    width: 21.25rem;
+    border-radius: var(--radius);
+    transition: var(--transition);
+    background-color: var(--bgHover);
+}
+
+
+/* Europe */
+
+.Europe {
+    background-color: var(--bgHover);
+    border-radius: 0.5rem;
+    padding: 0 1rem;
+}
+
+.europe:hover .Europe {
+    background-color: var(--europe);
+    transition: var(--transition);
+}
+
+.europe:hover {
+    box-shadow: 0.1rem 0.1rem 0.3rem 0.3rem var(--europe);
+    width: 21.25rem;
+    border-radius: var(--radius);
+    transition: var(--transition);
+    background-color: var(--bgHover);
+}
+
+/* Antarctica */
+
+.Antarctica {
+    background-color: var(--bgHover);
+    border-radius: 0.5rem;
+    padding: 0 1rem;
+}
+
+.antarctica:hover .Antarctica {
+    background-color: #b1b1b1;
+    transition: var(--transition);
+}
+
+.antarctica:hover {
+    box-shadow: 0.1rem 0.1rem 0.3rem 0.3rem #fafefd;
+    width: 21.25rem;
+    border-radius: var(--radius);
+    transition: var(--transition);
+    background-color: var(--bgHover);
+}
+
+
+/* Africa*/
+
+.Africa {
+    background-color: var(--bgHover);
+    border-radius: 0.5rem;
+    padding: 0 1rem;
+}
+
+.africa:hover .Africa {
+    background-color: var(--africa);
+    transition: var(--transition);
+}
+
+.africa:hover {
+    box-shadow: 0.1rem 0.1rem 0.3rem 0.3rem var(--africa);
+    width: 21.25rem;
+    border-radius: var(--radius);
+    transition: var(--transition);
+    background-color: var(--bgHover);
+}
+
+/* Oceania */
+
+.Oceania {
+    background-color: var(--bgHover);
+    border-radius: 0.5rem;
+    padding: 0 1rem;
+}
+
+.oceania:hover .Oceania {
+    background-color: var(--oceania);
+    transition: var(--transition);
+}
+
+.oceania:hover {
+    box-shadow: 0.1rem 0.1rem 0.3rem 0.3rem var(--oceania);
+    width: 21.25rem;
+    border-radius: var(--radius);
+    transition: var(--transition);
+    background-color: var(--bgHover);
+}
+
+
+.South {
+    background-color: var(--bgHover);
+    border-radius: 0.5rem;
+    padding: 0 1rem;
+}
+
+.south:hover .South {
+    background-color: var(--south);
+    transition: var(--transition);
+}
+
+.south:hover {
+    box-shadow: 0.1rem 0.1rem 0.3rem 0.3rem var(--south);
+    width: 21.25rem;
+    border-radius: var(--radius);
+    transition: var(--transition);
+    background-color: var(--bgHover);
+}
+
+/* Landing Page */
+
+.btn {
+    background: var(--aliceblue);
+    cursor: pointer;
+    border: none;
+    padding: 1rem 2.6rem;
+    color: #38726C;
+    font-size: 1.25rem;
+    font-weight: bold;
+    position: relative;
+    border-radius: 0.8rem;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg,
+            red, blue, deeppink, blue,
+            red, blue, deeppink, blue,
+        );
+    background-size: 800%;
+    border-radius: 0.7rem;
+    filter: blur(0.5rem);
+    animation: glowing 20s linear infinite;
+}
+
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}  

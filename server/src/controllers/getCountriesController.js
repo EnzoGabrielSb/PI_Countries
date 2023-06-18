@@ -8,7 +8,7 @@ const getCountriesControllers = async () => {
       return {
         id: e.cca3,
         name: e.name.common,
-        flag: e.flag,
+        flag: e.flags.png,
         continent: e.continents[0],
         capital: e.capital,
         subregion: e.subregion,
