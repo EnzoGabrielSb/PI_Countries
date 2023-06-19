@@ -1,12 +1,13 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { checking, getCountries } from "../../redux/actions";
+import { checking, getCountries, getActivities } from "../../redux/actions";
 import Style from "./Create.module.css";
 
 const Create = ({ setForm }) => {
   let countries = useSelector((state) => state.countries);
   let sorting = useSelector((state) => state.sorting);
+  let activities = useSelector((state) => state.activities);
 
   const dispatch = useDispatch();
   const [error, setError] = useState({});
@@ -15,13 +16,13 @@ const Create = ({ setForm }) => {
     difficulty: "",
     duration: "",
     season: "",
-    countries: [],
-    // flags: ''
+    country: [],
   });
 
   useEffect(() => {
     setError(validateCreate(create));
     if (!sorting[0]) dispatch(getCountries());
+    if (activities.length) dispatch(getActivities());
   }, [dispatch, sorting, create]);
 
   const validateCreate = (create) => {
@@ -34,7 +35,7 @@ const Create = ({ setForm }) => {
 
     if (create.season === "") errors.season = "error";
 
-    if (!create.countries[0]) errors.countries = "error";
+    if (!create.country[0]) errors.country = "error";
 
     return errors;
   };
@@ -50,8 +51,7 @@ const Create = ({ setForm }) => {
     if (event.target.value !== "countries") {
       setCreate({
         ...create,
-        countries: [...create.countries, event.target.value],
-        // flags: [...create.flags, event.target.valor]
+        country: [...create.country, event.target.value],
       });
     }
   };
@@ -60,14 +60,17 @@ const Create = ({ setForm }) => {
     axios.post("http://localhost:3001/activities", create);
     setForm(false);
     dispatch(checking());
+    dispatch(getCountries());
+    dispatch(getActivities());
+    // window.location.reload(); // Actualizar la página
   };
 
   const handleDelete = (event) => {
     event.preventDefault();
     setCreate({
       ...create,
-      countries: create.countries.filter(
-        (countries) => countries !== event.target.value
+      country: create.country.filter(
+        (country) => country !== event.target.value
       ),
     });
   };
@@ -151,7 +154,7 @@ const Create = ({ setForm }) => {
               <div className={Style.div}>
                 <label className={Style.label}>Countries</label>
                 <select
-                  name="countries"
+                  name="country"
                   onChange={handleSelect}
                   className={Style.input}
                 >
@@ -163,16 +166,16 @@ const Create = ({ setForm }) => {
                   ))}
                 </select>
               </div>
-              {error.countries && <span className={Style.x}>❗❗</span>}
+              {error.country && <span className={Style.x}>❗❗</span>}
             </div>
             <div className={Style.flagBox}>
-              {create.countries?.map((countries, i) => (
-                <span key={i} className={Style.span} value={countries}>
-                  {countries}
+              {create.country?.map((country, i) => (
+                <span key={i} className={Style.span} value={country}>
+                  {country}
                   <button
                     onClick={handleDelete}
                     className={Style.btnDelete}
-                    value={countries}
+                    value={country}
                   >
                     x
                   </button>{" "}

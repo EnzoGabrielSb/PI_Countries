@@ -3,12 +3,11 @@
   padding: 0;
   box-sizing: border-box;
   line-height: 1;
-
   font-family: "Poppins", sans-serif;
 }
 
 body {
-  background-image: url('./Assets/World\ Map.svg');
+  background-image: url("./Assets/World\ Map.svg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -26,7 +25,6 @@ body::-webkit-scrollbar {
   width: 10px;
   background-color: #1a2547;
   z-index: 99;
-
 }
 
 body::-webkit-scrollbar-thumb {

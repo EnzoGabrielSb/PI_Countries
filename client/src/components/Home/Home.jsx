@@ -24,7 +24,7 @@ const Home = () => {
   // Pagination
   const [input, setInput] = useState(1);
   const [current, setCurrent] = useState(1);
-  const [perPage] = useState(9);
+  const [perPage] = useState(8);
   const max = Math.ceil(sorting.length / perPage);
 
   useEffect(() => {

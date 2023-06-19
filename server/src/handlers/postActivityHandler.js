@@ -1,14 +1,14 @@
 const postActivityController = require("../controllers/postActivityController");
 
 const postActivityHandler = async (req, res) => {
-  const { name, difficulty, duration, season, countries } = req.body;
+  const { name, difficulty, duration, season, country } = req.body;
   try {
     const newActivity = await postActivityController(
       name,
       difficulty,
       duration,
       season,
-      countries
+      country
     );
     if (!newActivity) throw new Error("Activity couldn't be created");
     res.status(200).json(newActivity);

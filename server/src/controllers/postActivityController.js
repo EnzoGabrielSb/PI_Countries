@@ -6,7 +6,7 @@ const postActivityController = async (
   difficulty,
   duration,
   season,
-  countries
+  country
 ) => {
   const find = await Activity.findAll({
     where: { name: { [Op.iLike]: name } },
@@ -22,7 +22,7 @@ const postActivityController = async (
 
     const countriesData = await Country.findAll({
       where: {
-        name: countries,
+        name: country,
       },
     });
 
