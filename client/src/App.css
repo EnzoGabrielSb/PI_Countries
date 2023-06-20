@@ -7,14 +7,13 @@
 }
 
 body {
-  background-image: url("./Assets/World\ Map.svg");
+  background-image: url("./assets/World\ Map.svg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  background-color: #1a2547;
-  height: 100vh;
-  width: 100vw;
+  background-color: #1a4447;
+
   overflow: hidden;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -23,7 +22,7 @@ body {
 
 body::-webkit-scrollbar {
   width: 10px;
-  background-color: #1a2547;
+  background-color: #1a4447;
   z-index: 99;
 }
 
