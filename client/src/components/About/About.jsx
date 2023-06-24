@@ -1,10 +1,14 @@
 /* eslint-disable react/jsx-no-target-blank */
 import React from "react";
 import "./About.css";
+import { Link } from "react-router-dom";
 
 const About = () => {
   return (
     <div class="containter">
+      <Link to="/home">
+        <button class="card-client">X</button>
+      </Link>
       <div class="card-client">
         <div class="user-picture">
           <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">

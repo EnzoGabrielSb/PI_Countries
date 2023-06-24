@@ -1,15 +1,15 @@
 .containter {
   display: flex;
   justify-content: center;
-  margin-top: 15px;
+  margin-top: 150px;
 }
 
 .card-client {
   margin: 15px;
   background: #2cb5a0;
-  width: 75%;
-  height: auto;
-  padding-top: 25px;
+  width: 85%;
+  height: 80%;
+  padding-top: 55px;
   padding-bottom: 25px;
   padding-left: 20px;
   padding-right: 20px;

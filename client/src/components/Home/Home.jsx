@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Continents.css";
 import Style from "./Home.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { getActivities, getCountries } from "../../redux/actions";
+import { getActivities, getCountries, getSort } from "../../redux/actions";
 import Nav from "../Nav/Nav";
 import Card from "../Card/Card";
 import Loader from "../Loader/Loader";
@@ -21,10 +21,9 @@ const Home = () => {
   const activities = useSelector((state) => state.activities);
 
   const [sort, setSort] = useState(true);
-  // Pagination
   const [input, setInput] = useState(1);
   const [current, setCurrent] = useState(1);
-  const [perPage] = useState(8);
+  const [perPage] = useState(10);
   const max = Math.ceil(sorting.length / perPage);
 
   useEffect(() => {
@@ -66,7 +65,7 @@ const Home = () => {
                       key={country.id}
                     >
                       <Card
-                        key={country.id} // Agregamos la clave aquí
+                        key={country.id} // Key for React DevTools
                         id={country.id}
                         name={country.name}
                         flag={country.flag}

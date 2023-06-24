@@ -9,6 +9,7 @@ export const CLOSE = "CLOSE";
 export const CHECKING = "CHECKING";
 export const GET_ACTIVITIES = "GET_ACTIVITIES";
 export const GET_SELECT_ACTIVITY = "GET_SELECT_ACTIVITY";
+export const DELETE_FILTERS = "DELETE_FILTERS";
 
 const endpointCountries = "http://localhost:3001/countries";
 const endpointActivities = "http://localhost:3001/activities";
@@ -78,7 +79,7 @@ export function getByName(name) {
       const filteredCountries = data.filter((country) =>
         country.name.toLowerCase().includes(name.toLowerCase())
       );
-      console.log(filteredCountries);
+
       return dispatch({
         type: SEARCH,
         payload: filteredCountries,
@@ -90,7 +91,7 @@ export function getByName(name) {
 }
 
 export const deleteFilters = () => (dispatch) => {
-  return dispatch({ type: "DELETE_FILTERS" });
+  return dispatch({ type: DELETE_FILTERS });
 };
 
 export const errorClose = () => (dispatch) => {

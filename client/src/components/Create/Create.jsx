@@ -184,14 +184,12 @@ const Create = ({ setForm }) => {
             </div>
           </div>
           <div className={Style.btnBox}>
-            <button
-              type="submit"
-              className={Style.btn}
-              hidden={Object.entries(error).length ? true : false}
-            >
+
+            <button type="submit" className={Style.btn} hidden={Object.entries(error).length ? true : false}>
               <span className={Style.shadow}></span>
               <span className={Style.edge}></span>
               <span className={Style.front}>Create</span>
+
             </button>
           </div>
         </form>

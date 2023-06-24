@@ -9,6 +9,7 @@ import {
   GET_SORT,
   POPULATION,
   SEARCH,
+  DELETE_FILTERS,
 } from "./actions";
 
 const initialState = {
@@ -41,28 +42,24 @@ const rootReducer = (state = initialState, action) => {
         sorting: result,
       };
     case GET_SORT:
+      if (action.payload === "sort") {
+        return state; // Devolver el estado actual sin cambios
+      }
+
       const sort =
         action.payload === "asc"
-          ? state.sorting.sort((a, b) => {
-              if (a.name > b.name) return 1;
-
-              if (a.name < b.name) return -1;
-
-              return 0;
-            })
+          ? [...state.sorting].sort((a, b) => a.name.localeCompare(b.name))
           : action.payload === "desc"
-          ? state.sorting.sort((a, b) => {
-              if (a.name > b.name) return -1;
-
-              if (a.name < b.name) return 1;
-
-              return 0;
-            })
+          ? [...state.sorting].sort((a, b) =>
+              b.name.localeCompare(a.name, "es", { sensitivity: "base" })
+            )
           : [...state.countries];
+
       return {
         ...state,
         sorting: sort,
       };
+
     case POPULATION:
       const sortPopulation =
         action.payload === "high"
@@ -90,7 +87,7 @@ const rootReducer = (state = initialState, action) => {
         sorting: action.payload,
       };
 
-    case "DELETE_FILTERS":
+    case DELETE_FILTERS:
       return {
         ...state,
         sorting: state.countries,
